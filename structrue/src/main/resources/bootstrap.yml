@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: structure
+
+  cloud:
+    nacos:
+      config:
+        enabled: false
+      discovery:
+        enabled: true
+        server-addr: localhost:8848
+      server-addr: localhost:8848
+      username: nacos
+      password: nacos
