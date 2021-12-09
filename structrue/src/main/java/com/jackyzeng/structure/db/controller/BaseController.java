@@ -3,16 +3,15 @@ package com.jackyzeng.structure.db.controller;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.jackyzeng.structure.common.model.Result;
-import com.jackyzeng.structure.db.entity.BaseEntity;
-import com.jackyzeng.structure.db.entity.BaseForm;
-import com.jackyzeng.structure.db.entity.BaseQuery;
+import com.jackyzeng.structure.db.model.BaseModel;
+import com.jackyzeng.structure.db.model.PageQuery;
 import com.jackyzeng.structure.db.service.IBaseService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-public abstract class BaseController<T extends BaseEntity, F extends BaseForm, Q extends BaseQuery> {
+public abstract class BaseController<T extends BaseModel, F, Q extends PageQuery> {
 
     protected abstract IBaseService<T, Q> getService();
 
