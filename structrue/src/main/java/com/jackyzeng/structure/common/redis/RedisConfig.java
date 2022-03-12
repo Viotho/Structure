@@ -1,6 +1,9 @@
-package com.jackyzeng.structure.redis;
+package com.jackyzeng.structure.common.redis;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.springframework.boot.autoconfigure.AutoConfigureBefore;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
+import org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration;
 import org.springframework.cache.CacheManager;
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.annotation.Bean;
@@ -19,9 +22,11 @@ import java.time.Duration;
 
 @Configuration
 @EnableCaching
+@AutoConfigureBefore(RedisAutoConfiguration.class)
 public class RedisConfig {
 
-    @Bean
+    @Bean(name = "redisTemplate")
+    @ConditionalOnMissingBean(RedisTemplate.class)
     public RedisTemplate<String, Object> redisTemplate(RedisConnectionFactory factory) {
         RedisTemplate<String, Object> redisTemplate = new RedisTemplate<>();
         redisTemplate.setConnectionFactory(factory);
