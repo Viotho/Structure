@@ -3,12 +3,10 @@ package com.jackyzeng.structure.db.properties;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.cloud.context.config.annotation.RefreshScope;
 
 @Setter
 @Getter
 @ConfigurationProperties(prefix = "structure.auto-fill")
-@RefreshScope
 public class MybatisPlusAutoFillProperties {
     /**
      * 是否开启自动填充字段

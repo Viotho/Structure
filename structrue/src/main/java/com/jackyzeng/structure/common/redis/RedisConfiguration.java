@@ -23,7 +23,7 @@ import java.time.Duration;
 @Configuration
 @EnableCaching
 @AutoConfigureBefore(RedisAutoConfiguration.class)
-public class RedisConfig {
+public class RedisConfiguration {
 
     @Bean(name = "redisTemplate")
     @ConditionalOnMissingBean(RedisTemplate.class)
@@ -54,15 +54,10 @@ public class RedisConfig {
 
 
     @Bean
-    public RedisMessageListenerContainer redisMessageListenerContainer(RedisConnectionFactory factory) {
+    public RedisMessageListenerContainer redisMessageListenerContainer(RedisConnectionFactory factory, RedisListener redisListener) {
         RedisMessageListenerContainer container = new RedisMessageListenerContainer();
         container.setConnectionFactory(factory);
-        container.addMessageListener(redisListener(), new PatternTopic("demo-channel"));
+        container.addMessageListener(redisListener, new PatternTopic("demo-channel"));
         return container;
-    }
-
-    @Bean
-    public RedisListener redisListener() {
-        return new RedisListener();
     }
 }
