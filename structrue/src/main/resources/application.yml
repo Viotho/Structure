@@ -15,9 +15,9 @@ spring:
           password: admin
           driver-class-name: com.mysql.cj.jdbc.Driver
         hive:
-          url: jdbc:hive2://your_hive_ip:port/your_database_name
-          username: your_username
-          password: your_password
+          url: jdbc:hive2://localhost:10000/structrue
+          username: admin
+          password: admin
           driver-class-name: org.apache.hive.jdbc.HiveDriver
 
 structure:
