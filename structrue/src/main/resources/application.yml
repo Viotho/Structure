@@ -20,6 +20,30 @@ spring:
           password: admin
           driver-class-name: org.apache.hive.jdbc.HiveDriver
 
+  cloud:
+    stream:
+      kafka:
+        binder:
+          brokers: localhost:9092
+          auto-create-topics: true
+      bindings:
+        input:
+          destination: destination
+          content-type: application/json
+          group: group
+        output:
+          destination: destination
+          content-type: application/json
+          group: group
+        customInput:
+          destination: customDestination
+          content-type: application/json
+          group: group
+        customOutput:
+          destination: customDestination
+          content-type: application/json
+          group: group
+
 structure:
   async:
     corePoolSize: 10
