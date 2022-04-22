@@ -1,4 +1,4 @@
-package com.jackyzeng.structure.enums;
+package com.jackyzeng.structure.common.enums;
 
 import java.util.Map;
 import java.util.Optional;
