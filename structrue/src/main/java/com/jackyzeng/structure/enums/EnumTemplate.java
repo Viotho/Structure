@@ -33,7 +33,7 @@ public enum EnumTemplate {
             Stream.of(values()).collect(
                     Collectors.toMap(Object::toString, e -> e));
 
-    // Returns Operation for string, if any
+    // Returns EnumTemplate for string, if any
     public static Optional<EnumTemplate> fromString(String symbol) {
         return Optional.ofNullable(stringToEnum.get(symbol));
     }
