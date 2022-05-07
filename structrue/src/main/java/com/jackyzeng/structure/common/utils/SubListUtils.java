@@ -11,10 +11,10 @@ public class SubListUtils {
     }
 
     private static <E> Stream<List<E>> prefixes(List<E> list) {
-        return IntStream.of(1, list.size()).mapToObj(end -> list.subList(0, end));
+        return IntStream.rangeClosed(1, list.size()).mapToObj(end -> list.subList(0, end));
     }
 
     private static <E> Stream<List<E>> suffixes(List<E> list) {
-        return IntStream.of(0, list.size()).mapToObj(start -> list.subList(start, list.size()));
+        return IntStream.range(0, list.size()).mapToObj(start -> list.subList(start, list.size()));
     }
 }
