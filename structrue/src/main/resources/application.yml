@@ -3,7 +3,12 @@ spring:
     host: localhost
     port: 6379
 
-# MyBatis-Plus 多数据源
+  cache:
+    type: caffeine
+    caffeine:
+      spec: maximumSize=500, expireAfterAccess=600s
+
+  # MyBatis-Plus 多数据源
   datasource:
     dynamic:
       primary: mysql #设置默认的数据源或者数据源组,默认值即为master
@@ -20,29 +25,29 @@ spring:
           password: admin
           driver-class-name: org.apache.hive.jdbc.HiveDriver
 
-  cloud:
-    stream:
-      kafka:
-        binder:
-          brokers: localhost:9092
-          auto-create-topics: true
-      bindings:
-        input:
-          destination: destination
-          content-type: application/json
-          group: group
-        output:
-          destination: destination
-          content-type: application/json
-          group: group
-        customInput:
-          destination: customDestination
-          content-type: application/json
-          group: group
-        customOutput:
-          destination: customDestination
-          content-type: application/json
-          group: group
+#  cloud:
+#    stream:
+#      kafka:
+#        binder:
+#          brokers: localhost:9092
+#          auto-create-topics: true
+#      bindings:
+#        input:
+#          destination: destination
+#          content-type: application/json
+#          group: group
+#        output:
+#          destination: destination
+#          content-type: application/json
+#          group: group
+#        customInput:
+#          destination: customDestination
+#          content-type: application/json
+#          group: group
+#        customOutput:
+#          destination: customDestination
+#          content-type: application/json
+#          group: group
 
 structure:
   async:
