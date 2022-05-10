@@ -1,6 +1,8 @@
-package com.jackyzeng.structure.common.redis;
+package com.jackyzeng.structure.common.redis.config;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.jackyzeng.structure.common.redis.message.RedisListener;
+import com.jackyzeng.structure.common.redis.lock.RedisLockService;
 import org.springframework.boot.autoconfigure.AutoConfigureBefore;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration;
@@ -17,6 +19,7 @@ import org.springframework.data.redis.listener.PatternTopic;
 import org.springframework.data.redis.listener.RedisMessageListenerContainer;
 import org.springframework.data.redis.serializer.Jackson2JsonRedisSerializer;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
+import org.springframework.integration.redis.util.RedisLockRegistry;
 
 import java.time.Duration;
 
@@ -59,5 +62,15 @@ public class RedisConfiguration {
         container.setConnectionFactory(factory);
         container.addMessageListener(redisListener, new PatternTopic("demo-channel"));
         return container;
+    }
+
+    @Bean(destroyMethod = "destroy")
+    public RedisLockRegistry redisLockRegistry(RedisConnectionFactory redisConnectionFactory) {
+        return new RedisLockRegistry(redisConnectionFactory, "lock");
+    }
+
+    @Bean
+    public RedisLockService redisLockService(RedisLockRegistry redisLockRegistry) {
+        return new RedisLockService(redisLockRegistry);
     }
 }

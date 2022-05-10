@@ -1,4 +1,4 @@
-package com.jackyzeng.structure.common.redis;
+package com.jackyzeng.structure.common.redis.message;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;

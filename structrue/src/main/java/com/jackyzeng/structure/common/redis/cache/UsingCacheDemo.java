@@ -1,4 +1,4 @@
-package com.jackyzeng.structure.common.redis;
+package com.jackyzeng.structure.common.redis.cache;
 
 import org.springframework.cache.annotation.CacheConfig;
 import org.springframework.cache.annotation.CacheEvict;
@@ -6,7 +6,7 @@ import org.springframework.cache.annotation.CachePut;
 import org.springframework.cache.annotation.Cacheable;
 
 @CacheConfig(cacheNames = "namespace")
-public class CacheDemo {
+public class UsingCacheDemo {
 
     @Cacheable(key = "#p0")
     public void cacheableDemo(String param) {
