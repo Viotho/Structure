@@ -80,6 +80,9 @@
     <orderEntry type="library" name="Maven: com.github.ben-manes.caffeine:caffeine:3.0.6" level="project" />
     <orderEntry type="library" name="Maven: org.checkerframework:checker-qual:3.21.3" level="project" />
     <orderEntry type="library" name="Maven: com.google.errorprone:error_prone_annotations:2.11.0" level="project" />
+    <orderEntry type="library" name="Maven: com.github.xiaolyuh:layering-cache-starter:3.4.6" level="project" />
+    <orderEntry type="library" name="Maven: com.github.xiaolyuh:layering-cache-aspectj:3.4.6" level="project" />
+    <orderEntry type="library" name="Maven: com.github.xiaolyuh:layering-cache-core:3.4.6" level="project" />
     <orderEntry type="library" name="Maven: com.baomidou:mybatis-plus-boot-starter:3.5.1" level="project" />
     <orderEntry type="library" name="Maven: com.baomidou:mybatis-plus:3.5.1" level="project" />
     <orderEntry type="library" name="Maven: com.baomidou:mybatis-plus-extension:3.5.1" level="project" />

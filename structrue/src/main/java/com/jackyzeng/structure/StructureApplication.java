@@ -1,10 +1,10 @@
 package com.jackyzeng.structure;
 
+import com.github.xiaolyuh.cache.config.EnableLayeringCache;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cache.annotation.EnableCaching;
 
-@EnableCaching
+@EnableLayeringCache
 @SpringBootApplication
 public class StructureApplication {
 
