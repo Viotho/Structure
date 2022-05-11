@@ -15,18 +15,18 @@ import java.util.List;
 public class CustomMessageConverter implements HttpMessageConverter<ConverterTarget> {
 
     @Override
-    public boolean canRead(Class<?> aClass, MediaType mediaType) {
+    public boolean canRead(Class<?> clazz, MediaType mediaType) {
         return false;
     }
 
     @Override
-    public boolean canWrite(Class<?> aClass, MediaType mediaType) {
-        return false;
+    public boolean canWrite(Class<?> clazz, MediaType mediaType) {
+        return clazz.isAssignableFrom(ConverterTarget.class);
     }
 
     @Override
     public List<MediaType> getSupportedMediaTypes() {
-        return null;
+        return MediaType.parseMediaTypes("application/x-type");
     }
 
     @Override
