@@ -5,6 +5,9 @@ import java.util.stream.StreamSupport;
 
 public class StreamIterUtils {
 
+    private StreamIterUtils(){
+    }
+
     public static <E> Iterable<E> iterableOf(Stream<E> stream) {
         return stream::iterator;
     }
