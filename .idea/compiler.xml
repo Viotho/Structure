@@ -7,11 +7,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="structrue" />
+        <module name="structure" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="structrue" target="1.8" />
+      <module name="structure" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
