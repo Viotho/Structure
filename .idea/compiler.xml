@@ -12,6 +12,8 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="structure" target="1.8" />
+      <module name="structure-db-spring-boot-starter" target="1.8" />
+      <module name="structure-sdk" target="1.7" />
     </bytecodeTargetLevel>
   </component>
 </project>

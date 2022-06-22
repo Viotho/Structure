@@ -5,6 +5,7 @@
       <list>
         <option value="$PROJECT_DIR$/structrue/pom.xml" />
         <option value="$PROJECT_DIR$/structure/pom.xml" />
+        <option value="$PROJECT_DIR$/structure-sdk-db/pom.xml" />
       </list>
     </option>
   </component>
